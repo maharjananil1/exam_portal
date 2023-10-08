@@ -1,0 +1,26 @@
+@startuml
+entity "User" as user {
+  *id : number <<generated>>
+  *uuid : string <<generated>>
+  --
+  - firstName : string
+  - lastName : string
+  - username : string (unique)
+  - password : string (encrypted)
+  - email : string (unique)
+  - phone : string (unique)
+  - active : boolean
+  - deleted : boolean
+  - about : text
+  - role_id : string
+}
+
+entity "Role" as role {
+  *id : number <<generated>>
+  *uuid : string <<generated>>
+  --
+  - role : string
+}
+
+user }o..o{ role
+@enduml
