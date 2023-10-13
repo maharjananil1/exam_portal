@@ -1,6 +1,8 @@
 package org.personal.exam_portal_backend.service.user;
 
 import java.util.Set;
+import org.personal.exam_portal_backend.common.domain.JWTResponse;
+import org.personal.exam_portal_backend.common.domain.LoginRequest;
 import org.personal.exam_portal_backend.dao.entity.User;
 import org.personal.exam_portal_backend.dao.entity.UserRole;
 
@@ -11,4 +13,6 @@ public interface UserService {
   User getUserByUsername(String username);
 
   String deleteUserByUsername(String username);
+
+  JWTResponse login(LoginRequest loginRequest);
 }
